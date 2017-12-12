@@ -1,4 +1,5 @@
 import React from 'react';
+import Right from './Right';
 import './OccSummary.css';
 
 // This is a class component, as opposted to a functional component
@@ -16,20 +17,22 @@ class OccSummary extends React.Component {
                             <h6>Jobs ({this.props.regionalJobsYear})</h6>
                         </li>
                         <li className="jobs">
-                            <h6>{this.props.percent}% {this.props.aboveBelow} National average</h6>
+                            <h6>{this.props.percent}% <span className="green">{this.props.aboveBelow}</span> National average</h6>
                         </li>
                     </ul>
                     <ul id="middle">
                         <li className="change">
-                            <h2>{this.props.regionalJobsGrowth}%</h2>
+                            <h2 className="green">+{this.props.regionalJobsGrowth}%</h2>
                         </li>
                         <li className="change">
                             <h6>% Change ({this.props.jobsGrowthStartYear}-{this.props.jobsGrowthEndYear})</h6>
                         </li>
                         <li className="change">
-                            <h6>Nation: {this.props.nationalJobsGrowth}</h6>
+                            <h6>Nation: <span className="green">+{this.props.nationalJobsGrowth}%</span></h6>
                         </li>
                     </ul>
+                    {/* This works, but does not render the state */}
+                    {/* <Right /> */}
                     <ul id="right">
                         <li className="earnings">
                             <h2>${this.props.regionalEarnings}/hr</h2>

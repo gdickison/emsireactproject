@@ -63,7 +63,7 @@ class App extends React.Component {
           /* Earnings need to render to two decimal places */
           regionalEarnings={this.state.regionalEarnings}
           nationalAvgEarnings={this.state.nationalAvgEarnings}
-        />
+        />          
         <SectionHeader sectionTitle="Regional Trends"/>
         <OccRegionalTrend />
         <SectionHeader sectionTitle="Industries Employing " occupationTitle={this.state.occupationTitle}/>
