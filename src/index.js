@@ -5,7 +5,7 @@ import OccupationSearch from './OccupationSearch';
 import App from './App';
 import NotFound from './NotFound';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-// import { match } from 'react-router';
+import { Router } from 'react-router';
 import registerServiceWorker from './registerServiceWorker';
 
 
@@ -13,13 +13,11 @@ import registerServiceWorker from './registerServiceWorker';
 const Root = () => {
     return (
         <BrowserRouter>
-            <div>
-                <Switch>
-                    <Route exact path="/" component={OccupationSearch} />
-                    <Route path="/occupation/:occupationId" component={App} />
-                    <Route component={NotFound} />
-                </Switch>
-            </div>
+            <Switch>
+                <Route exact path="/" component={OccupationSearch} />
+                <Route path="/occupation/:occupationId" component={App} />
+                <Route component={NotFound} />
+            </Switch>
         </BrowserRouter>
     )
 }
