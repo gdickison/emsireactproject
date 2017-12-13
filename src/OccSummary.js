@@ -17,7 +17,7 @@ class OccSummary extends React.Component {
                             <h6>Jobs ({this.props.regionalJobsYear})</h6>
                         </li>
                         <li className="jobs">
-                            <h6>{this.props.percent}% <span className="green">{this.props.aboveBelow}</span> National average</h6>
+                            <h6>{this.props.percentChange}% <span className="green">{this.props.aboveBelow}</span> National average</h6>
                         </li>
                     </ul>
                     <ul id="middle">
