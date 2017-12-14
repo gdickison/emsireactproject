@@ -5,7 +5,7 @@ import { Chart } from 'react-google-charts';
 
 
 // This only contains a section heading, which has been replaced by the SectionHeader component. The Google char should go here instead, and it should be renamed? The h5 element can go away.
-class OccRegionalTrend extends React.Component {
+class RegionalTrendsGraph extends React.Component {
     render() {
         return (
           <div className="RegionalTrendsLineChart">
@@ -104,4 +104,4 @@ class OccRegionalTrend extends React.Component {
       }
 }
 
-export default OccRegionalTrend;
+export default RegionalTrendsGraph;

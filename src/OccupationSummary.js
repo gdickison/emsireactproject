@@ -1,9 +1,9 @@
 import React from 'react';
 import Right from './Right';
-import './OccSummary.css';
+import './OccupationSummary.css';
 
 // This is a class component, as opposted to a functional component
-class OccSummary extends React.Component {
+class OccupationSummary extends React.Component {
     render () {
         return (
             <div className='OccSummary'>
@@ -22,13 +22,13 @@ class OccSummary extends React.Component {
                     </ul>
                     <ul id="middle">
                         <li className="change">
-                            <h2 className="green">+{this.props.regionalJobsGrowth}%</h2>
+                            <h2 className="green">{this.props.regionalPlusMinus}{this.props.regionalJobsGrowth}%</h2>
                         </li>
                         <li className="change">
                             <h6>% Change ({this.props.jobsGrowthStartYear}-{this.props.jobsGrowthEndYear})</h6>
                         </li>
                         <li className="change">
-                            <h6>Nation: <span className="green">+{this.props.nationalJobsGrowth}%</span></h6>
+                            <h6>Nation: <span className="green">{this.props.natlPlusMinus}{this.props.nationalJobsGrowth}%</span></h6>
                         </li>
                     </ul>
                     {/* This works, but does not render the state */}
@@ -50,4 +50,4 @@ class OccSummary extends React.Component {
     }
 }
 
-export default OccSummary;
+export default OccupationSummary;
