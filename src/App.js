@@ -23,30 +23,27 @@ class App extends React.Component {
     fetch('https://api.myjson.com/bins/119um3')
       .then(response => response.json())
       .then(data => {
+        const regionalJobsNum = (data.summary.jobs.regional).toLocaleString('en');
+        const jobsNationalAvg = data.summary.jobs.national_avg;
+        console.log(regionalJobsNum, jobsNationalAvg);
+        const percentChange = (data.summary.jobs.regional / data.summary.jobs.national_avg * 100).toFixed(0);
+        const aboveBelow = data.summary.jobs.regional > data.summary.jobs.national_avg ? "above" : "below";
+        console.log(percentChange);
         this.setState({ 
           occupationTitle: data.occupation['title'],
           regionTitle: data.region.title,
-          regionalJobsNum: data.summary.jobs['regional'],
+          regionalJobsNum: regionalJobsNum,
           regionalJobsYear: data.summary.jobs.year,
           jobsGrowthStartYear: data.summary.jobs_growth.start_year,
           jobsGrowthEndYear: data.summary.jobs_growth.end_year,
           regionalJobsGrowth: data.summary.jobs_growth.regional,
           nationalJobsGrowth: data.summary.jobs_growth.national_avg,
-          jobsNationalAvg: data.summary.jobs['national_avg'],
+          jobsNationalAvg: jobsNationalAvg,
           regionalEarnings: data.summary.earnings.regional,
           nationalAvgEarnings: data.summary.earnings.national_avg,
-          percentChange: function(regionalJobsNum, jobsNationalAvg) {
-            return Number(regionalJobsNum) / Number(jobsNationalAvg);
-          },
+          percentChange: percentChange,
+          aboveBelow: aboveBelow,
         });
-        // Why is this NaN?
-        // const percentChange = function(jobsNationalAvg, regionalJobsNum){
-        //   const a = jobsNationalAvg;
-        //   const b = regionalJobsNum;
-        //   console.log(a, b);
-        //    return a / b;
-        // };
-        // console.log(percentChange());
       });
   }
 
@@ -66,8 +63,8 @@ class App extends React.Component {
         <OccSummary
           regionalJobsNum={this.state.regionalJobsNum}
           regionalJobsYear={this.state.regionalJobsYear}
-          percent={this.state.percentChange}
-          aboveBelow="above"
+          percentChange={this.state.percentChange}
+          aboveBelow={this.state.aboveBelow}
           regionalJobsGrowth={this.state.regionalJobsGrowth}
           jobsGrowthStartYear={this.state.jobsGrowthStartYear}
           jobsGrowthEndYear={this.state.jobsGrowthEndYear}
@@ -80,7 +77,6 @@ class App extends React.Component {
         <OccRegionalTrend />
         <SectionHeader sectionTitle="Industries Employing " occupationTitle={this.state.occupationTitle}/>
         <IndustriesEmploying />
-        <FetchData />
         {/* Why do the console.logs run twice? */}
       </div>
     );
