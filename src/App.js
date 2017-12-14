@@ -16,9 +16,10 @@ class App extends React.Component {
   }
 // State needs to go on the App component, since it has to be available downstream. Each component can have it's own state.
   componentDidMount() {
-    fetch('https://api.myjson.com/bins/119um3')
+    fetch('https://www.jasonbase.com/things/dM3J.json')
       .then(response => response.json())
       .then(data => {
+        // Occupation Summary section
         const regionalJobsNum = (data.summary.jobs.regional).toLocaleString('en');
         const jobsNationalAvg = data.summary.jobs.national_avg;
         const percentChange = (data.summary.jobs.regional / data.summary.jobs.national_avg * 100).toFixed(0);
@@ -27,6 +28,18 @@ class App extends React.Component {
         const natlPlusMinus = data.trend_comparison.nation[0] < data.trend_comparison.nation[data.trend_comparison.nation.length - 1] ? "+" : "-";
         const regionalEarnings = (data.summary.earnings.regional).toFixed(2);
         const nationalAvgEarnings = (data.summary.earnings.national_avg).toFixed(2);
+        // Regional Trends section
+
+        // Industries Employing section
+        const inOccIndustriesList = data.employing_industries.industries;
+        const titlesArray = inOccIndustriesList.map((job) => job.title);
+        const titles = titlesArray.map((title, i) => <li key={i}>{title}</li>);
+        const jobsArray = inOccIndustriesList.map((job) => job.in_occupation_jobs);
+        const inOccJobs = jobsArray.map((inOccJob, i) => <li key={i}>{inOccJob}</li>);
+
+        // Console.log(something) just to make sure it's working
+        console.log(inOccIndustriesList);
+        console.log(titles);
         this.setState({ 
           occupationTitle: data.occupation['title'],
           regionTitle: data.region.title,
@@ -43,6 +56,9 @@ class App extends React.Component {
           aboveBelow: aboveBelow,
           regionalPlusMinus: regionalPlusMinus,
           natlPlusMinus: natlPlusMinus,
+          inOccIndustriesList: inOccIndustriesList,
+          titles: titles,
+          inOccJobs: inOccJobs,
         });
       });
   }
@@ -71,16 +87,19 @@ class App extends React.Component {
           jobsGrowthEndYear={this.state.jobsGrowthEndYear}
           natlPlusMinus={this.state.natlPlusMinus}
           nationalJobsGrowth={this.state.nationalJobsGrowth}
-          /* Earnings need to render to two decimal places */
           regionalEarnings={this.state.regionalEarnings}
           nationalAvgEarnings={this.state.nationalAvgEarnings}
+          
         />          
         <SectionHeader sectionTitle="Regional Trends"/>
         <RegionalTrendsGraph />
         <RegionalTrendsTable />
         <SectionHeader sectionTitle="Industries Employing " occupationTitle={this.state.occupationTitle}/>
-        <IndustriesEmploying />
-        {/* Why do the console.logs run twice? */}
+        <IndustriesEmploying
+          regionTitle={this.state.industries}
+          titles={this.state.titles}
+          inOccJobs={this.state.inOccJobs}
+        />
       </div>
     );
   }

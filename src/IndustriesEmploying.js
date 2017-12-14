@@ -8,8 +8,20 @@ class IndustriesEmploying extends React.Component {
         this.state = {
           options: {
             title: 'Industry',
-            hAxis: { minValue: 0, maxValue: 5000 },
-            vAxis: { minValue: 0, maxValue: 5 },
+            colors: ['lightblue'],
+            chartArea: {left: 20, width: '50%'},
+            legend: {position: 'none'},
+            hAxis:
+              { minValue: 0,
+                maxValue: 5000,
+                gridlines: {color:'white'},
+               },
+            vAxis: 
+              { minValue: 0,
+                maxValue: 5,
+                textPosition: 'in',
+                textStyle: {color: 'blue'}
+              },
             legend: 'none',
           },
           rows: [
@@ -33,6 +45,7 @@ class IndustriesEmploying extends React.Component {
       }
     render() {
         return (
+          <div>
             <Chart
                 chartType="BarChart"
                 rows={this.state.rows}
@@ -43,6 +56,10 @@ class IndustriesEmploying extends React.Component {
                 height={'400px'}
                 legend_toggle
             />
+            {/* How can I stile these? */}
+            <ul className="chart">{this.props.titles}</ul>
+            <ul>{this.props.inOccJobs}</ul>
+          </div>
         );
     }
 }
