@@ -59,6 +59,7 @@ class IndustriesEmploying extends React.Component {
             {/* How can I stile these? */}
             <ul className="chart">{this.props.titles}</ul>
             <ul>{this.props.inOccJobs}</ul>
+            <ul>{this.props.percentOfOccInIndustry}</ul>
           </div>
         );
     }

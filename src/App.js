@@ -35,7 +35,16 @@ class App extends React.Component {
         const titlesArray = inOccIndustriesList.map((job) => job.title);
         const titles = titlesArray.map((title, i) => <li key={i}>{title}</li>);
         const jobsArray = inOccIndustriesList.map((job) => job.in_occupation_jobs);
-        const inOccJobs = jobsArray.map((inOccJob, i) => <li key={i}>{inOccJob}</li>);
+        const inOccJobs = jobsArray.map((inOccJob, i) => <li key={i}>{inOccJob.toLocaleString('en')}</li>);
+        const industryJobsArray = inOccIndustriesList.map((job) => job.jobs);
+        // const <% of occupation in industry> (col 3) goes here
+        const percentOfOccInIndustryArray = jobsArray.map((numJobs) => ((numJobs / 12352) * 100).toFixed(1));
+        const percentOfOccInIndustry = percentOfOccInIndustryArray.map((percent, i) => <li key={i}>{percent}%</li>);
+        console.log(percentOfOccInIndustryArray);
+        console.log(industryJobsArray);
+        console.log(jobsArray);
+        // const <% of total jobs in industry> (col 4) goes here
+        // I need to divide jobsArray by industryJobsArray
 
         // Console.log(something) just to make sure it's working
         console.log(inOccIndustriesList);
@@ -59,6 +68,7 @@ class App extends React.Component {
           inOccIndustriesList: inOccIndustriesList,
           titles: titles,
           inOccJobs: inOccJobs,
+          percentOfOccInIndustry: percentOfOccInIndustry,
         });
       });
   }
@@ -99,6 +109,7 @@ class App extends React.Component {
           regionTitle={this.state.industries}
           titles={this.state.titles}
           inOccJobs={this.state.inOccJobs}
+          percentOfOccInIndustry={this.state.percentOfOccInIndustry}
         />
       </div>
     );
