@@ -60,6 +60,7 @@ class IndustriesEmploying extends React.Component {
             <ul className="chart">{this.props.titles}</ul>
             <ul>{this.props.inOccJobs}</ul>
             <ul>{this.props.percentOfOccInIndustry}</ul>
+            <ul>{this.props.percentOfTotalJobsInInd}</ul>
           </div>
         );
     }

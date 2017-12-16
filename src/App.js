@@ -40,12 +40,23 @@ class App extends React.Component {
         // const <% of occupation in industry> (col 3) goes here
         const percentOfOccInIndustryArray = jobsArray.map((numJobs) => ((numJobs / 12352) * 100).toFixed(1));
         const percentOfOccInIndustry = percentOfOccInIndustryArray.map((percent, i) => <li key={i}>{percent}%</li>);
-        console.log(percentOfOccInIndustryArray);
+        console.log(percentOfOccInIndustry);
         console.log(industryJobsArray);
         console.log(jobsArray);
-        // const <% of total jobs in industry> (col 4) goes here
-        // I need to divide jobsArray by industryJobsArray
 
+        // const <% of total jobs in industry> (col 4) goes here
+        const percentOfTotalJobsInIndArray = function(jobsArray, industryJobsArray){
+          const createArray = [];
+          var percent;
+          for(var i = 0; i < jobsArray.length; i++){
+            percent = (((jobsArray[i] / industryJobsArray[i]) * 100).toFixed(1));
+            createArray.push(percent);
+          }
+          return createArray;
+        };
+        const percentOfTotalJobsInInd = percentOfTotalJobsInIndArray(jobsArray, industryJobsArray).map((percent, i) => <li key={i}>{percent}%</li>);
+        console.log(percentOfTotalJobsInInd);
+        
         // Console.log(something) just to make sure it's working
         console.log(inOccIndustriesList);
         console.log(titles);
@@ -69,6 +80,7 @@ class App extends React.Component {
           titles: titles,
           inOccJobs: inOccJobs,
           percentOfOccInIndustry: percentOfOccInIndustry,
+          percentOfTotalJobsInInd: percentOfTotalJobsInInd,
         });
       });
   }
@@ -99,7 +111,7 @@ class App extends React.Component {
           nationalJobsGrowth={this.state.nationalJobsGrowth}
           regionalEarnings={this.state.regionalEarnings}
           nationalAvgEarnings={this.state.nationalAvgEarnings}
-          
+          percentOfTotalJobsInInd={this.state.percentOfTotalJobsInInd}
         />          
         <SectionHeader sectionTitle="Regional Trends"/>
         <RegionalTrendsGraph />
@@ -110,6 +122,7 @@ class App extends React.Component {
           titles={this.state.titles}
           inOccJobs={this.state.inOccJobs}
           percentOfOccInIndustry={this.state.percentOfOccInIndustry}
+          percentOfTotalJobsInInd={this.state.percentOfTotalJobsInInd}
         />
       </div>
     );
