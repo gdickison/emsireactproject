@@ -13,8 +13,8 @@ class App extends React.Component {
     this.state = {}
   }
   componentDidMount() {
-    // alt fetch('https://api.myjson.com/bins/119um3')
-    fetch('https://www.jasonbase.com/things/dM3J.json')
+    fetch('https://api.myjson.com/bins/119um3')
+    // fetch('https://www.jasonbase.com/things/dM3J.json')
       .then(response => response.json())
       .then(data => {
         // **************************//
@@ -52,7 +52,7 @@ class App extends React.Component {
         // List of Industries (col 1) - can I put bars behind each one?
         const inOccIndustriesList = data.employing_industries.industries;
         const titlesArray = inOccIndustriesList.map((job) => job.title);
-        const titles = titlesArray.map((title, i) => <li key={i}>{title}</li>);
+        const titles = titlesArray.map((title, i) => <li key={i}><i className="fa fa-building" aria-hidden="true"></i>{title}</li>);
         // Occupation Jobs in Industry (col 2)
         const jobsArray = inOccIndustriesList.map((job) => job.in_occupation_jobs);
         const inOccJobs = jobsArray.map((inOccJob, i) => <li key={i}>{inOccJob.toLocaleString('en')}</li>);
