@@ -1,5 +1,6 @@
 import React from 'react';
 import { Chart } from 'react-google-charts';
+import 'font-awesome/scss/font-awesome.scss';
 
 // What do I do about this table? Would Victory be better? I'll try Google first
 class IndustriesEmploying extends React.Component {
