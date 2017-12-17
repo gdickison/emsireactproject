@@ -46,7 +46,7 @@ class IndustriesEmploying extends React.Component {
       }
     render() {
         return (
-          <div>
+          <div className='IndEmploying'>
             <Chart
                 chartType="BarChart"
                 rows={this.state.rows}
@@ -57,11 +57,27 @@ class IndustriesEmploying extends React.Component {
                 height={'400px'}
                 legend_toggle
             />
-            {/* How can I stile these? */}
-            <ul className="chart">{this.props.titles}</ul>
-            <ul>{this.props.inOccJobs}</ul>
-            <ul>{this.props.percentOfOccInIndustry}</ul>
-            <ul>{this.props.percentOfTotalJobsInInd}</ul>
+            {/* How can I style these? */}
+            <div className='IndustryTableContainer'>
+              <ul className='IndTableHeading'>
+                <li>Industry</li>
+              </ul>
+              <ul className='IndHeading'>
+                <li>Occupation Jobs in Industry(year)</li>
+              </ul>
+              <ul className='IndHeading'>
+                <li>% of Occupation in Industry(year)</li>
+              </ul>
+              <ul className='IndHeading'>
+                <li>% of Total Jobs in Industry(year)</li>
+              </ul>
+            </div>
+            <div className='IndustryDataContainer'>
+              <ul className='IndDataHeadings'>{this.props.titles}</ul>
+              <ul className='IndTableData'>{this.props.inOccJobs}</ul>
+              <ul className='IndTableData'>{this.props.percentOfOccInIndustry}</ul>
+              <ul className='IndTableData'>{this.props.percentOfTotalJobsInInd}</ul>
+            </div>
           </div>
         );
     }
