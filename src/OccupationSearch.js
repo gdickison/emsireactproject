@@ -17,7 +17,7 @@ class OccupationSearch extends React.Component {
     render() {
         return (
             <div>
-                <h1>This will be a search form</h1>
+                <h1>Occuation Search</h1>
                 <form action="./App" className="occupation-selector" onSubmit={(e) => this.goToOccupation(e)}>
                     <h2>Enter an occupation</h2>
                     <input type="text" required placeholder="Occupation" defaultValue="Computer Programmers" ref={(input) => {this.occupationInput = input}}/>

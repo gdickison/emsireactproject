@@ -8,7 +8,6 @@ import { Router } from 'react-router';
 import registerServiceWorker from './registerServiceWorker';
 
 
-// This is how you route in React
 const Root = () => {
     return (
         <BrowserRouter>
@@ -21,7 +20,6 @@ const Root = () => {
     )
 }
 
-// Render out the Root component, and it will route as directed in the BrowserRouter element
 render(<Root/>, document.querySelector('#root'));
 
 // I have no idea what this does - deleting it has no obvious effect
