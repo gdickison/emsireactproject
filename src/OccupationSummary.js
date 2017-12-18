@@ -1,13 +1,10 @@
 import React from 'react';
-import Right from './Right';
-import './OccupationSummary.css';
 
 // This is a class component, as opposted to a functional component
 class OccupationSummary extends React.Component {
     render () {
         return (
             <div className='OccSummary'>
-                {/* This is probably better the way I had it the first time, unless I can figure out how to create li */}
                 <div id="numBoxes">
                     <ul id="left">
                         <li className="jobs">
@@ -31,8 +28,6 @@ class OccupationSummary extends React.Component {
                             <h6>Nation: <span className="green">{this.props.natlPlusMinus}{this.props.nationalJobsGrowth}%</span></h6>
                         </li>
                     </ul>
-                    {/* This works, but does not render the state */}
-                    {/* <Right /> */}
                     <ul id="right">
                         <li className="earnings">
                             <h2>${this.props.regionalEarnings}/hr</h2>

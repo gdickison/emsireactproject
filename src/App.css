@@ -1,3 +1,7 @@
+/* ======================= */
+/*       WHOLE DOC         */
+/* ======================= */
+
 body {
     font-family: 'Nunito', sans-serif;
     font-size: 16px;
@@ -10,96 +14,42 @@ body {
 /* ======================= */
 
 .PageHeader {
-    background: #f5f5f5;
-    color: #333;
-    margin: 20px 20px 1px 20px;
-    border: 4px solid rgb(245, 238, 238);
+    padding-left: 30px;
+    margin: 20px 20px 0 20px;
 }
 
 .PageHeader h2 {
     margin-bottom: 0;
-    padding-left: 30px;
 }
 
 .PageHeader h5 {
     margin-top: 0;
     margin-bottom: 0;
-    padding-left: 30px;
 }
 
 /* ========================== */
 /*       SECTIONHEADER        */
 /* ========================== */
 
-
+/* This creates one border too many at the top, before the Occupation Summary section */
 .SectionHeader {
     padding-left: 30px;
-    background: #f5f5f5;
-    color: #333;
-    margin: 1px 20px 0 20px;
-    border: 4px solid rgb(245, 238, 238);
+    margin: 20px 20px 0 20px;
+    border-bottom: 2px solid rgb(245, 238, 238);
 }
 
-/* ========================= */
-/*       OCC SUMMARY         */
-/* ========================= */
 
-/* Flexbox styling */
+/* ================================ */
+/*       OCCUPATION SUMMARY         */
+/* ================================ */
 
 .OccSummary {
-    background: #f5f5f5;
-    color: #333;
     margin: 1px 20px 20px 20px;
-    border: 4px solid rgb(245, 238, 238);
     padding: 0;
 }
 
-#occSumTitle {
-    padding-left: 30px;
+.OccSummary h5 {
     margin-bottom: 0;
-}
-
-
-
-#numBoxes {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-align: center;
-    flex-grow: 1;
-}
-
-ul {
-    flex-direction:column;
-    padding: 0 40px 0 40px;
-}
-
-#middle {
-    border-width: 2px 2px 2px 2px;
-    border-style: solid;
-    border-color: rgb(245, 238, 238);
-}
-
-.green {
-    color: green;
-}
-
-#left {
-    /* I can't figure out how to remove the border from the outer edge */
-    border-width: 2px 0 2px 0;
-    border-style: solid;
-    border-color: rgb(245, 238, 238);
-}
-#right {
-    /* I can't figure out how to remove the border from the outer edge */
-    border-width: 2px 0 2px 0;
-    border-style: solid;
-    border-color: rgb(245, 238, 238);
-}
-
-li {
-    border: none;
 }
 
 .OccSummary h2 {
@@ -115,71 +65,50 @@ li {
     margin-top: 0;
 }
 
-/* ============================== */
-/*       REGIONAL TRENDS          */
-/* ============================== */
+/* Flexbox styling */
 
-.OccRegionalTrend {
-    background: #f5f5f5;
-    color: #333;
-    margin: 1px 20px 20px 20px;
-    border: 4px solid rgb(245, 238, 238);
-    padding: 0;
-  }
-
-.OccRegionalTrend h5 {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 30px;
+#numBoxes {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
 }
 
-/* =========================== */
-/* REGIONAL TREND CHART        */
-/* =========================== */
-
-.RegionalTrendsLineChart {
+ul {
+    list-style: none;
+    flex-grow: 1;
+    padding: 0 40px 20px 40px;
     margin: 0;
 }
 
-.widget {
-    width: 202px;
-    margin:100px auto;
-    border:1px solid black;
-    padding:20px;
-  }
-.name {
-    color: red;
-}
-.default-label {
-    border: 1px solid black;
-    padding: 10px;
-    margin-bottom: 10px;
-    width:180px;
+
+/* Border between boxes */
+
+#middle {
+    border-width: 2px 2px 2px 2px;
+    border-style: solid;
+    border-color: rgb(245, 238, 238);
 }
 
-.green-label {
-    border: 1px solid green;
-    padding: 10px;
-    margin-bottom: 10px;
-    width: 180px;
+#left,
+#right {
+    border-width: 2px 0 2px 0;
+    border-style: solid;
+    border-color: rgb(245, 238, 238);
 }
 
-.default-input {
-    border: 1px solid #eaeaea;
-    padding: 10px;
-    width:180px;
+.green {
+    color: green;
 }
 
-.important-input {
-    border: 2px solid red;
-    width:180px;
-}
 
-img.center {
-    width: 100px;
-    height: 100px;
-    display: block;
-    margin: 15px auto;    
+
+/* =========================== */
+/* REGIONAL TREND GRAPH        */
+/* =========================== */
+
+.RegionalTrendsLineChart {
+    padding: 0 30px 0 45px;
 }
 
 /* =========================== */
@@ -190,9 +119,14 @@ img.center {
 
 .wrapper {
     display: grid;
-    grid-template-columns: 5% 55% 10% 10% 10% 10%;
+    grid-template-columns: 2% 50% 12% 12% 12% 12%;
     grid-template-rows: auto auto auto auto;
-    margin: 20px 20px 1px 20px;
+    padding: 0 30px 0 30px;
+    margin: 0 0 0 20px;
+}
+
+.ColumnTitle {
+    font-weight: 900;
 }
 
 .col1>.row1 {
@@ -218,15 +152,20 @@ img.center {
     text-align: right;
 }
 
+/* I couldn't get the text in the rows to center vertically */
+.row1,
+.row2,
+.row3,
+.row4 {
+    border-bottom: 1px solid rgb(245, 238, 238);
+}
+
 /* ========================= */
 /*       INDUSTRIES          */
 /* ========================= */
 
-.IndEmploying {
-    background: #f5f5f5;
-    color: #333;
+.IndustriesEmploying {
     margin: 1px 20px 20px 20px;
-    border: 4px solid rgb(245, 238, 238);
     padding: 0;
   }
 
@@ -236,45 +175,36 @@ img.center {
     padding-left: 30px;
 }
 
-/* ************************ */
-/* INDUSTRY TABLE CONTAINER */
-/* ************************ */
-
-/* Flexbox styling */
-
-.IndustryTableContainer {
-    list-style: none;
-    display: flex;
-    flex-grow: 1;
+.IndustriesEmploying ul {
+    padding: 0;
 }
 
-.IndTableHeading {
-    text-align: left;
+.IndustriesEmploying li {
+    padding: 5px 0 5px 0;
 }
 
-.IndHeading {
+/* CSS Grid Styling (easier than Flexbox to make it look right */
+
+.IndustriesEmployingGrid {
+    display: grid;
+    grid-template-columns: 64% 12% 12% 12%;
+    grid-template-rows: auto;
+}
+
+.JobTitles.Data {
+    color: blue;
+}
+
+.ColHeading {
+    font-weight: 900;
+    align-self: center;
+}
+
+.Col2,
+.Col3,
+.Col4 {
     text-align: right;
+    padding: 0;
 }
 
-
-.IndustryDataContainer {
-    list-style: none;
-    display: flex;
-    flex-grow: 1;
-}
-
-.IndDataHeadings {
-    text-align: left;
-}
-
-.IndTableData {
-    text-align: right;
-}
-
-
-
-
-/* ****************** */
-/* CSS Table          */
-/* ****************** */
-
+/* I couldn't get the borders between each industry to line up correctly */

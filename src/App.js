@@ -49,17 +49,17 @@ class App extends React.Component {
         // ****************************//
         // INDUSTRIES EMPLOYING SECTION//
         // ****************************//
-        // List of Industries (col 1) - can I put bars behind each one?
+        // List of Industries (col 1)
         const inOccIndustriesList = data.employing_industries.industries;
         const titlesArray = inOccIndustriesList.map((job) => job.title);
-        const titles = titlesArray.map((title, i) => <li key={i}><i className="fa fa-building" aria-hidden="true"></i>{title}</li>);
+        const titles = titlesArray.map((title, i) => <li key={i} className='Col1 JobTitles Data'><i className="fa fa-building" aria-hidden="true"></i>{title}</li>);
         // Occupation Jobs in Industry (col 2)
         const jobsArray = inOccIndustriesList.map((job) => job.in_occupation_jobs);
-        const inOccJobs = jobsArray.map((inOccJob, i) => <li key={i}>{inOccJob.toLocaleString('en')}</li>);
+        const inOccJobs = jobsArray.map((inOccJob, i) => <li key={i} className='Col2 Data'>{inOccJob.toLocaleString('en')}</li>);
         const industryJobsArray = inOccIndustriesList.map((job) => job.jobs);
         // % of occupation in industry (col 3)
         const percentOfOccInIndustryArray = jobsArray.map((numJobs) => ((numJobs / 12352) * 100).toFixed(1));
-        const percentOfOccInIndustry = percentOfOccInIndustryArray.map((percent, i) => <li key={i}>{percent}%</li>);
+        const percentOfOccInIndustry = percentOfOccInIndustryArray.map((percent, i) => <li key={i} className='Col3 Data'>{percent}%</li>);
         // % of total jobs in industry (col 4)
         const percentOfTotalJobsInIndArray = function(jobsArray, industryJobsArray){
           const createArray = [];
@@ -70,7 +70,8 @@ class App extends React.Component {
           }
           return createArray;
         };
-        const percentOfTotalJobsInInd = percentOfTotalJobsInIndArray(jobsArray, industryJobsArray).map((percent, i) => <li key={i}>{percent}%</li>);
+        const percentOfTotalJobsInInd = percentOfTotalJobsInIndArray(jobsArray, industryJobsArray).map((percent, i) => <li key={i} className='Col4 Data'>{percent}%</li>);
+        const industryYear = data.employing_industries.year;
         // Set state for everything
         this.setState({ 
           // Page Header & Section Headers
@@ -108,6 +109,7 @@ class App extends React.Component {
           regionChange: regionChange,
           stateChange: stateChange,
           nationChange: nationChange,
+          industryYear: industryYear,
         });
       });
   }
@@ -161,6 +163,7 @@ class App extends React.Component {
           inOccJobs={this.state.inOccJobs}
           percentOfOccInIndustry={this.state.percentOfOccInIndustry}
           percentOfTotalJobsInInd={this.state.percentOfTotalJobsInInd}
+          industryYear={this.state.industryYear}
         />
       </div>
     );
