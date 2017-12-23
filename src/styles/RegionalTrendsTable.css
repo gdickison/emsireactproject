@@ -2,22 +2,32 @@
 /* REGIONAL TREND TABLE        */
 /* =========================== */
 
-/* CSS Grid styling */
+/* CSS table styling */
 
-.wrapper {
-    display: grid;
-    grid-template-columns: 2% 50% 12% 12% 12% 12%;
-    grid-template-rows: auto auto auto auto;
-    padding-right: 30px;
-    margin: 0 0 0 20px;
+.regionalTrendsTable {
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    /* padding-right: 30px; */
+    /* margin: 1px 20px 20px 20px; */
+    font-size: 0.8rem;
 }
 
-.ColumnTitle {
+th {
     font-weight: 900;
 }
 
-.col1>.row1 {
-    color: white;
+td {
+    padding: 1px;
+}
+
+.row1 {
+    font-size: 0.8rem;
+}
+
+.col1 {
+    width: 2%;
+    text-align: center;
 }
 
 .fa-circle {
@@ -35,14 +45,20 @@
     grid-row: 6 / 7;
 }
 
+.col2 {
+    width: 50%;
+    text-align: left;
+}
+
 .col3, .col4, .col5, .col6 {
+    width: 12%;
     text-align: right;
 }
 
-/* I couldn't get the text in the rows to center vertically */
 .row1,
 .row2,
 .row3,
 .row4 {
+    height: 20px;
     border-bottom: 1px solid rgb(245, 238, 238);
 }
