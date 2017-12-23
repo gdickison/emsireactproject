@@ -3,8 +3,11 @@
 /* ========================= */
 
 .IndustriesEmploying {
-    margin: 1px 20px 20px 20px;
-    padding: 0;
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    /* margin: 1px 20px 20px 20px;
+    padding: 0; */
   }
 
 .IndustriesEmploying h5 {
