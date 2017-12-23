@@ -26,7 +26,7 @@
 
 /* Flexbox styling */
 
-#numBoxes {
+#occupationSummaryBoxes {
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -43,14 +43,14 @@ ul {
 
 /* Border between boxes */
 
-#middle {
+#occupationSummaryChange {
     border-width: 2px 2px 2px 2px;
     border-style: solid;
     border-color: rgb(245, 238, 238);
 }
 
-#left,
-#right {
+#occupationSummaryJobs,
+#occupationSummaryEarnings {
     border-width: 2px 0 2px 0;
     border-style: solid;
     border-color: rgb(245, 238, 238);
