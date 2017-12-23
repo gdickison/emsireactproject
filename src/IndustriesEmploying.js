@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/IndustriesEmploying.css';
 
 // Set up to populate a CSS grid. I could not figure out how to get the bars behind the industry titles. I could make a bar chart with the bars, or I could make this CSS grid, but I could not figure out how to do both together.
 class IndustriesEmploying extends React.Component {

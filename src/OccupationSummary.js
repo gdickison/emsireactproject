@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/OccupationSummary.css';
 import OccupationSummaryJobs from './OccupationSummaryJobs';
 import OccupationSummaryChange from './OccupationSummaryChange';
 import OccupationSummaryEarnings from './OccupationSummaryEarnings';

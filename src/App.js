@@ -5,7 +5,7 @@ import OccupationSummary from './OccupationSummary';
 import RegionalTrendsGraph from './RegionalTrendsGraph';
 import RegionalTrendsTable from './RegionalTrendsTable';
 import IndustriesEmploying from './IndustriesEmploying';
-import './App.css';
+import './styles/App.css';
 
 class App extends React.Component {
   constructor() {
