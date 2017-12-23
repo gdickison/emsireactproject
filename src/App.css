@@ -1,6 +1,35 @@
-/* ======================= */
-/*       WHOLE DOC         */
-/* ======================= */
+/* ====================================== */
+/*       OCCUPATION OVERVIEW PAGE         */
+/* ====================================== */
+
+.gorgias-loaded {
+    margin: 40px 130px 40px 130px;
+}
+
+.form h5 {
+    margin-bottom: 10px;
+}
+
+input {
+    height: 40px;
+    width: 100%;
+    border: solid 1px lightgray;
+    border-radius: 3px;
+}
+
+button {
+    background-color: rgb(0,184,140);
+    color: white;
+    height: 35px;
+    width: 60px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 3px;
+}
+
+/* ====================================== */
+/*       OCCUPATION OVERVIEW PAGE         */
+/* ====================================== */
 
 body {
     font-family: 'Nunito', sans-serif;
