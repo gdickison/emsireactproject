@@ -1,0 +1,14 @@
+/* ====================================== */
+/*       OCCUPATION OVERVIEW PAGE         */
+/* ====================================== */
+
+body {
+    margin: 0;
+}
+
+.App {
+    font-family: 'Nunito', sans-serif;
+    padding: 30px;
+    border: 4px solid rgb(245, 238, 238);
+    margin: 30px 100px 30px 100px;
+  }

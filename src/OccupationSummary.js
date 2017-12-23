@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/OccupationSummary.css';
 
 // This is a class component, as opposted to a functional component
 class OccupationSummary extends React.Component {

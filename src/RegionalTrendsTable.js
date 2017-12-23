@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/RegionalTrendsTable.css';
 
 // This is set up to populate a CSS grid
 export default class RegionalTrensTable extends React.Component{

@@ -1,0 +1,9 @@
+/* ========================== */
+/*       SECTIONHEADER        */
+/* ========================== */
+
+/* This creates one border too many at the top, before the Occupation Summary section */
+.SectionHeader {
+    margin: 20px 20px 0 20px;
+    border-bottom: 2px solid rgb(245, 238, 238);
+}

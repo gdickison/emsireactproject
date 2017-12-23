@@ -1,0 +1,16 @@
+/* ======================= */
+/*       PAGEHEADER        */
+/* ======================= */
+
+.PageHeader {
+    margin: 20px 20px 0 20px;
+}
+
+.PageHeader h2 {
+    margin-bottom: 0;
+}
+
+.PageHeader h5 {
+    margin-top: 0;
+    margin-bottom: 0;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Render } from 'react-dom';
 import { Chart } from 'react-google-charts';
+import './styles/RegionalTrendsGraph.css';
 
 // I used the Google charts dev tool to create the line chart
 
@@ -54,12 +55,12 @@ class RegionalTrendsGraph extends React.Component {
                     pointShape: 'circle',
                   },
                   1: {
-                    color: 'blue',
+                    color: 'rgb(97,144,204)',
                     pointSize: 5,
                     pointShape: 'square',
                   },
                   2: {
-                    color: 'lightblue',
+                    color: 'rgb(190,228,241)',
                     pointSize: 5,
                     pointShape: 'triangle'
                   }
