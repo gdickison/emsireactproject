@@ -17,6 +17,9 @@ class App extends React.Component {
     // fetch('https://www.jasonbase.com/things/dM3J.json')
       .then(response => response.json())
       .then(data => {
+
+        // Is it better practice to set a constant and then set state with the constant, or simply set state directly from the source data?
+
         // **************************//
         // OCCUPATION SUMMARY SECTION//
         // **************************//
@@ -49,29 +52,17 @@ class App extends React.Component {
         // ****************************//
         // INDUSTRIES EMPLOYING SECTION//
         // ****************************//
-        // List of Industries (col 1)
-        const inOccIndustriesList = data.employing_industries.industries;
-        const titlesArray = inOccIndustriesList.map((job) => job.title);
-        const titles = titlesArray.map((title, i) => <li key={i} className='Col1 JobTitles Data'><i className="fa fa-building" aria-hidden="true"></i>{title}</li>);
-        // Occupation Jobs in Industry (col 2)
-        const jobsArray = inOccIndustriesList.map((job) => job.in_occupation_jobs);
-        const inOccJobs = jobsArray.map((inOccJob, i) => <li key={i} className='Col2 Data'>{inOccJob.toLocaleString('en')}</li>);
-        const industryJobsArray = inOccIndustriesList.map((job) => job.jobs);
-        // % of occupation in industry (col 3)
-        const percentOfOccInIndustryArray = jobsArray.map((numJobs) => ((numJobs / 12352) * 100).toFixed(1));
-        const percentOfOccInIndustry = percentOfOccInIndustryArray.map((percent, i) => <li key={i} className='Col3 Data'>{percent}%</li>);
-        // % of total jobs in industry (col 4)
-        const percentOfTotalJobsInIndArray = function(jobsArray, industryJobsArray){
-          const createArray = [];
-          var percent;
-          for(var i = 0; i < jobsArray.length; i++){
-            percent = (((jobsArray[i] / industryJobsArray[i]) * 100).toFixed(1));
-            createArray.push(percent);
-          }
-          return createArray;
-        };
-        const percentOfTotalJobsInInd = percentOfTotalJobsInIndArray(jobsArray, industryJobsArray).map((percent, i) => <li key={i} className='Col4 Data'>{percent}%</li>);
-        const industryYear = data.employing_industries.year;
+
+        // Refactored for HTML table; before: 36 lines of code, after: 8 lines of code
+        const industryRow = data.employing_industries.industries.map((industry, i) =>
+          <tr key={'row'+(i+1)} className={'row'+(i+1)}>
+            <td key={'row'+(i+1)+'col1'} className={'row'+(i+1)+' '+'col1'}><i className="fa fa-building" aria-hidden="true"></i>{industry.title}</td>
+            <td key={'row'+(i+1)+'col2'} className={'row'+(i+1)+' '+'col2'}>{industry.in_occupation_jobs.toLocaleString('en')}</td>
+            <td key={'row'+(i+1)+'col3'} className={'row'+(i+1)+' '+'col3'}>{((industry.in_occupation_jobs / data.employing_industries.jobs) * 100).toFixed(1)}%</td>
+            <td key={'row'+(i+1)+'col4'} className={'row'+(i+1)+' '+'col4'}>{((industry.in_occupation_jobs / industry.jobs) * 100).toFixed(1)}%</td>
+          </tr>
+        );
+
         // Set state for everything
         this.setState({ 
           // Page Header & Section Headers
@@ -101,15 +92,12 @@ class App extends React.Component {
           regionPercentChange: regionPercentChange,
           statePercentChange: statePercentChange,
           nationPercentChange: nationPercentChange,
-          // Industries Employing
-          titles: titles,
-          inOccJobs: inOccJobs,
-          percentOfOccInIndustry: percentOfOccInIndustry,
-          percentOfTotalJobsInInd: percentOfTotalJobsInInd,
           regionChange: regionChange,
           stateChange: stateChange,
           nationChange: nationChange,
-          industryYear: industryYear,
+          // Industries Employing Table
+          industryYear: data.employing_industries.year,
+          industryRow: industryRow,
         });
       });
   }
@@ -164,6 +152,7 @@ class App extends React.Component {
           percentOfOccInIndustry={this.state.percentOfOccInIndustry}
           percentOfTotalJobsInInd={this.state.percentOfTotalJobsInInd}
           industryYear={this.state.industryYear}
+          industryRow={this.state.industryRow}
         />
       </div>
     );
