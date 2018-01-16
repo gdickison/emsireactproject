@@ -5,7 +5,7 @@ import './styles/RegionalTrendsTable.css';
 export default class RegionalTrensTable extends React.Component{
     render() {
         return (
-            <table id='regionalTrendsTable'>
+            <table className='regionalTrendsTable'>
                 <thead>
                     <tr className='row1'>
                         <th className='row1 col1'></th>

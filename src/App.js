@@ -13,8 +13,8 @@ class App extends React.Component {
     this.state = {}
   }
   componentDidMount() {
-    fetch('https://api.myjson.com/bins/119um3')
-    // fetch('https://www.jasonbase.com/things/dM3J.json')
+    // fetch('https://api.myjson.com/bins/119um3')
+    fetch('https://www.jasonbase.com/things/dM3J.json')
       .then(response => response.json())
       .then(data => {
 

@@ -3,64 +3,63 @@
 /* ========================= */
 
 /* CSS table styling */
-
-#IndustriesEmployingTable {
+.IndustriesEmployingTable {
     width: 96%;
     margin-left: 2%;
     margin-right: 2%;
     font-size: 0.75rem;
 }
 
-#IndustriesEmployingTable tbody .col1 {
+.IndustriesEmployingTable tbody .col1 {
     color: rgb(97,144,204);
     text-align: left;
     width: 64%;
 }
 
-#IndustriesEmployingTable th {
+.IndustriesEmployingTable th {
     font-weight: 900;
 }
 
-#IndustriesEmployingTable td {
+.IndustriesEmployingTable td {
     padding: 1px;
     font-size: 0.7rem;
 }
 
-#IndustriesEmployingTable thead .col1 {
+.IndustriesEmployingTable thead .col1 {
     text-align: left;
 }
 
-#IndustriesEmployingTable .col2,
-#IndustriesEmployingTable .col3,
-#IndustriesEmployingTable .col4 {
+.IndustriesEmployingTable .col2,
+.IndustriesEmployingTable .col3,
+.IndustriesEmployingTable .col4 {
     text-align: right;
     padding: 0;
     width: 12%;
 }
 
-#IndustriesEmployingTable .row0,
-#IndustriesEmployingTable .row1,
-#IndustriesEmployingTable .row2,
-#IndustriesEmployingTable .row3,
-#IndustriesEmployingTable .row4,
-#IndustriesEmployingTable .row5 {
+.IndustriesEmployingTable .row0,
+.IndustriesEmployingTable .row1,
+.IndustriesEmployingTable .row2,
+.IndustriesEmployingTable .row3,
+.IndustriesEmployingTable .row4,
+.IndustriesEmployingTable .row5 {
     /* background: blue; */
     border-bottom: 1px solid rgb(245, 238, 238);
 }
 
-#IndustriesEmployingTable .row1,
-#IndustriesEmployingTable .row2,
-#IndustriesEmployingTable .row3,
-#IndustriesEmployingTable .row4,
-#IndustriesEmployingTable .row5 {
+.IndustriesEmployingTable .row1,
+.IndustriesEmployingTable .row2,
+.IndustriesEmployingTable .row3,
+.IndustriesEmployingTable .row4,
+.IndustriesEmployingTable .row5 {
     height: 20px;
 }
 
 /* Figure out how to put this inline and generate the percentages with code */
-#IndustriesEmployingTable .row1 .col1 {
+.IndustriesEmployingTable .row1 .col1 {
     background: linear-gradient(to right, #bee4f1 70%, white 30%);
 }
 
-#IndustriesEmployingTable .row2 .col1 {
+.IndustriesEmployingTable .row2 .col1 {
     background: linear-gradient( to right, #bee4f1 50%, white 50%);
 }

@@ -3,7 +3,7 @@ import React from 'react';
 class OccupationSummaryEarnings extends React.Component{
     render(){
         return(
-            <ul id="occupationSummaryEarnings">
+            <ul className="occupationSummaryEarnings">
                 <li className="earnings">
                     <h2>${this.props.regionalEarnings}/hr</h2>
                 </li>

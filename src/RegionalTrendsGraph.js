@@ -1,5 +1,5 @@
 import React from 'react';
-import { Render } from 'react-dom';
+// import { Render } from 'react-dom';
 import { Chart } from 'react-google-charts';
 import './styles/RegionalTrendsGraph.css';
 

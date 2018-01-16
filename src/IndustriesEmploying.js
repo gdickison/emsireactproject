@@ -4,7 +4,7 @@ import './styles/IndustriesEmploying.css';
 class IndustriesEmploying extends React.Component {
     render() {
         return (
-            <table id='IndustriesEmployingTable'>
+            <table className='IndustriesEmployingTable'>
               <thead>
                 <tr className='row0'>
                   <th className='row0 col1'>Industry</th>

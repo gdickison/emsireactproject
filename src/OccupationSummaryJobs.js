@@ -3,7 +3,7 @@ import React from 'react';
 class OccupationSummaryJobs extends React.Component{
     render() {
         return(
-            <ul id="occupationSummaryJobs">
+            <ul className="occupationSummaryJobs">
                 <li className="jobs">
                     <h2>{this.props.regionalJobsNum}</h2>
                 </li>

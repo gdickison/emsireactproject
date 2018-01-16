@@ -8,7 +8,7 @@ class OccupationSummary extends React.Component {
     render () {
         return (
             <div className='OccSummary'>
-                <div id="occupationSummaryBoxes">
+                <div className="occupationSummaryBoxes">
                     <OccupationSummaryJobs
                         regionalJobsNum={this.props.regionalJobsNum}
                         regionalJobsYear={this.props.regionalJobsYear}

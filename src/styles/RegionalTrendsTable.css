@@ -4,57 +4,57 @@
 
 /* CSS table styling */
 
-#regionalTrendsTable {
+.regionalTrendsTable {
     width: 96%;
     margin-left: 2%;
     margin-right: 2%;
     font-size: 0.75rem;
 }
 
-#regionalTrendsTable th {
+.regionalTrendsTable th {
     font-weight: 900;
 }
 
-#regionalTrendsTable td {
+.regionalTrendsTable td {
     padding: 1px;
     font-size: 0.7rem;
 }
 
 
-#regionalTrendsTable .col1 {
+.regionalTrendsTable .col1 {
     width: 2%;
     text-align: center;
 }
 
-#regionalTrendsTable .fa-circle {
+.regionalTrendsTable .fa-circle {
     color: black;
 }
 
-#regionalTrendsTable .fa-square {
+.regionalTrendsTable .fa-square {
     color: rgb(97,144,204);
 }
 
-#regionalTrendsTable .triangle {
+.regionalTrendsTable .triangle {
     color: rgb(190,228,241);
 }
 
-#regionalTrendsTable .col2 {
+.regionalTrendsTable .col2 {
     width: 50%;
     text-align: left;
 }
 
-#regionalTrendsTable .col3,
-#regionalTrendsTable .col4,
-#regionalTrendsTable .col5,
-#regionalTrendsTable .col6 {
+.regionalTrendsTable .col3,
+.regionalTrendsTable .col4,
+.regionalTrendsTable .col5,
+.regionalTrendsTable .col6 {
     width: 12%;
     text-align: right;
 }
 
-#regionalTrendsTable .row1,
-#regionalTrendsTable .row2,
-#regionalTrendsTable .row3,
-#regionalTrendsTable .row4 {
+.regionalTrendsTable .row1,
+.regionalTrendsTable .row2,
+.regionalTrendsTable .row3,
+.regionalTrendsTable .row4 {
     height: 20px;
     border-bottom: 1px solid rgb(245, 238, 238);
 }

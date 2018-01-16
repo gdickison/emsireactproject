@@ -1,5 +1,5 @@
 import React from 'react';
-import { Component } from 'react-dom';
+// import { Component } from 'react-dom';
 import './styles/SectionHeader.css';
 
 class SectionHeader extends React.Component {
